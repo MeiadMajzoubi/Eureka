@@ -62,9 +62,9 @@ jobs:
       - name: 🎯 Download & Process
         id: main
         env:
-          URL_INP: ${{ steps.prep.outputs.URL }}
+          URL : ${{ steps.prep.outputs.URL }}
           MAX_PAGES: ${{ github.event.inputs.max_pages }}
-          FILE_NAME: ${{ github.event.inputs.filename}}
+          FILE_NAME: ${{ github.event.inputs.file_name }}
           THREADS: ${{ github.event.inputs.threads }}
           EXTERNAL_DOMAINS: ""
         run: |
