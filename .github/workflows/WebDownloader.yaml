@@ -1669,7 +1669,6 @@ jobs:
           rm -f "${{ github.event.inputs.file_name }}.zip"
       
           echo "📋 Creating zip..."
-      
           zip -r "${{ github.event.inputs.file_name }}.zip" "${{ github.event.inputs.file_name }}"
       
           echo "🗑 Removing original folder..."
@@ -1678,7 +1677,6 @@ jobs:
           git add "${{ github.event.inputs.file_name }}.zip"
       
           TOTAL=$(git diff --cached --name-only | wc -l)
-      
           echo "Found $TOTAL files"
       
           if [ "$TOTAL" -eq 0 ]; then
@@ -1688,6 +1686,10 @@ jobs:
       
           git commit -m "📦 $(date +%m%d-%H%M) [skip ci]"
       
+          git stash --include-untracked
           git pull --rebase origin main
+          git stash pop || true
+      
           git push origin main
+
 
