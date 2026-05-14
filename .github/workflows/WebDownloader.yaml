@@ -63,7 +63,7 @@ jobs:
         id: main
         env:
           URL: ${{ steps.prep.outputs.URL }}
-          MAX: github.event.inputs.max_pages
+          MAX: ${{ github.event.inputs.max_pages }}
         run: |
           python3 << 'PYEOF'
           from __future__ import annotations
