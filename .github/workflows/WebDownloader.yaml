@@ -62,8 +62,10 @@ jobs:
       - name: 🎯 Download & Process
         id: main
         env:
-          URL: ${{ steps.prep.outputs.URL }}
-          MAX: ${{ github.event.inputs.max_pages }}
+          URL: ${{ inputs.url }}
+          MAX: ${{ inputs.max_pages }}
+          THREADS: ${{ inputs.threads }}
+          FILE_NAME: ${{ inputs.file_name }}
         run: |
           python3 << 'PYEOF'
           from __future__ import annotations
