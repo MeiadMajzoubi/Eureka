@@ -62,8 +62,11 @@ jobs:
       - name: 🎯 Download & Process
         id: main
         env:
-          URL: ${{ steps.prep.outputs.URL }}
-          MAX: ${{ github.event.inputs.max_pages }}
+          URL_INP: ${{ steps.prep.outputs.URL }}
+          MAX_PAGES: ${{ github.event.inputs.max_pages }}
+          FILE_NAME: ${{ github.event.inputs.filename}}
+          THREADS: ${{ github.event.inputs.threads }}
+          EXTERNAL_DOMAINS: ""
         run: |
           python3 << 'PYEOF'
           from __future__ import annotations
