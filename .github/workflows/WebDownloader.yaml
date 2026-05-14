@@ -1656,18 +1656,6 @@ jobs:
       - name: 📤 Push Files
         run: |
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "📦 ZIPPING FILES"
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          pwd
-          ZIP_NAME="${FILE_NAME}.zip"
-
-          zip -r "${FILE_NAME}.zip" .
-
-          echo "🗑️ Removing original files..."
-          rm -rf "$FILE_NAME"
-
-          echo ""
-          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "📤 PUSHING TO GITHUB"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
@@ -1675,8 +1663,9 @@ jobs:
           git config user.email "bot@github.com"
 
           echo ""
-          echo "📋 Adding all files..."
-          git add -A
+          echo "📋 ziping...."
+          zip -r "${FILE_NAME}.zip" .
+          git add "${FILE_NAME}.zip"
 
           TOTAL=$(git diff --cached --name-only | wc -l)
           echo "   Found $TOTAL files"
