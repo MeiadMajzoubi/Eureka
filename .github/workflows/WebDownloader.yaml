@@ -1658,7 +1658,7 @@ jobs:
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "📦 ZIPPING FILES"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-
+          pwd
           ZIP_NAME="${FILE_NAME}.zip"
 
           zip -r "${FILE_NAME}.zip" .
