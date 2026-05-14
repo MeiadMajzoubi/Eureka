@@ -28,22 +28,22 @@ Many website downloaders are built for the public internet, but **Eureka** is de
 
 ## Usage
 📘 Step-by-Step Guide
-1. Log in to GitHub
-- Go to GitHub and log in to your account.
-2. Fork the Project
-Go to the project's main page on GitHub.
-Click the Fork button (top-right).
-Choose a name for your new repository.
-Click Create fork.
-3. Configure Permissions
+## 1. Log in to GitHub
+  - Go to GitHub and log in to your account.
+## 2. Fork the Project
+ - Go to the project's main page on GitHub.
+ - Click the Fork button (top-right).
+ - Choose a name for your new repository.
+ - Click Create fork.
+## 3. Configure Permissions
   **⚠️ This step is critical. Without it, no files will be saved to your repository.**
   1.Go to your forked repository.
   2.Navigate to Settings > Actions > General.
   3.Under Workflow permissions, select Read and write permissions and click Save.
-4. Enable Actions
-- Go to the Actions tab in your repository.
-- Click "I understand my workflows, go ahead and enable them".
-5. Run the Downloader
+## 4. Enable Actions
+ - Go to the Actions tab in your repository.
+ - Click "I understand my workflows, go ahead and enable them".
+## 5. Run the Downloader
 
 
 
