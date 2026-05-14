@@ -63,7 +63,7 @@ jobs:
         id: main
         env:
           URL: ${{ steps.prep.outputs.URL }}
-          MAX: ${{ github.event.inputs.max_pages }}
+          MAX: github.event.inputs.max_pages
         run: |
           python3 << 'PYEOF'
           from __future__ import annotations
@@ -1664,8 +1664,8 @@ jobs:
 
           echo ""
           echo "📋 ziping...."
-          zip -r "${FILE_NAME}.zip" .
-          git add "${FILE_NAME}.zip"
+          zip -r "${{ github.event.inputs.file_name }}".zip .
+          git add "${{ github.event.inputs.file_name }}".zip
 
           TOTAL=$(git diff --cached --name-only | wc -l)
           echo "   Found $TOTAL files"
